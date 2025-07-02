@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-@section('title', 'Lista de Produtos')
+
+@section('title', 'Produtos')
+@section('header', 'Gestão de Produtos')
 
 @section('content')
   <div class="bg-white shadow rounded-lg overflow-hidden">

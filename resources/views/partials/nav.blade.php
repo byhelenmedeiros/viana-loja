@@ -1,8 +1,8 @@
  <nav class="navbar bg-base-100 shadow-lg">
   <div class="flex-1 px-4 lg:px-8">
-    <a href="{{ route('dashboard') }}" class="btn btn-ghost normal-case text-xl">
+    <a href="{{ url('/') }}" class="btn btn-ghost normal-case text-xl">
       <i class="fas fa-wine-bottle text-2xl mr-2"></i>
-      Viana Loja
+      {{ config('app.name', 'Viana Loja') }}
     </a>
   </div>
   <div class="flex-none hidden lg:block">
@@ -20,14 +20,14 @@
         <ul class="p-2 bg-base-100">
           <li>
             <a href="{{ route('profile.edit') }}">
-              <i class="fas fa-id-badge mr-1"></i> Perfil
+              <i class="fas fa-id-badge mr-1"></i> Profile
             </a>
           </li>
           <li>
             <form method="POST" action="{{ route('logout') }}">
               @csrf
               <button type="submit" class="w-full text-left">
-                <i class="fas fa-sign-out-alt mr-1"></i> Sair
+                <i class="fas fa-sign-out-alt mr-1"></i> Log Out
               </button>
             </form>
           </li>
@@ -41,10 +41,3 @@
     </button>
   </div>
 </nav>
-
-{{-- scripts mínimos para toggle do menu móvel --}}
-<script>
-  document.getElementById('btn-mobile').addEventListener('click', () => {
-    document.querySelector('nav .menu-horizontal').classList.toggle('hidden');
-  });
-</script>

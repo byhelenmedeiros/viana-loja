@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    // GET  /admin/products
-    public function index()
+     public function index()
     {
         $products = Product::all();
         return view('admin.products.index', compact('products'));
@@ -43,8 +42,7 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index');
     }
 
-    // GET  /admin/products/{product}
-    public function show(Product $product)
+     public function show(Product $product)
     {
         return view('admin.products.show', compact('product'));
     }
